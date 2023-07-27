@@ -20,14 +20,15 @@
     var CONFIG = {"hostname":"seis.cloud","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Enhancing the accuracy and efficiency of routine seismic monitoring networks at local, regional, and global scales by integrating 3D background models and a 3D Greens function database. Family of S">
+  <meta name="description" content="Enhancing the accuracy and efficiency of routine seismic monitoring networks at local, regional, and global scales by integrating 3D background models and 3D Greens function database Family of SEIS">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SeisCloud">
 <meta property="og:url" content="https://seis.cloud/seismology/index.html">
 <meta property="og:site_name" content="SeisCloud">
-<meta property="og:description" content="Enhancing the accuracy and efficiency of routine seismic monitoring networks at local, regional, and global scales by integrating 3D background models and a 3D Greens function database. Family of S">
+<meta property="og:description" content="Enhancing the accuracy and efficiency of routine seismic monitoring networks at local, regional, and global scales by integrating 3D background models and 3D Greens function database Family of SEIS">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://seis.cloud/images/seis_logos.gif">
+<meta property="og:image" content="https://seis.cloud/images/seis_Proj.png">
 <meta property="og:image" content="https://seis.cloud/images/seis_Proj.png">
 <meta property="og:image" content="https://seis.cloud/images/seisdb_logo.svg">
 <meta property="og:image" content="https://seis.cloud/images/seisgen_logo.svg">
@@ -37,7 +38,7 @@
 <meta property="og:image" content="https://seis.cloud/images/logo_scinet_320px.png">
 <meta property="og:image" content="https://seis.cloud/images/specfem_logo.svg">
 <meta property="article:published_time" content="2023-04-10T04:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-20T22:06:45.812Z">
+<meta property="article:modified_time" content="2023-07-27T13:54:56.107Z">
 <meta property="article:author" content="Liang Ding">
 <meta property="article:tag" content="Geophysics, Seismology, python package, database, Earthquake, hazard mitigation, Earth sciences, Interdisciplinary projects">
 <meta name="twitter:card" content="summary">
@@ -199,14 +200,16 @@
           <!-- ![SeisCloud Logo](/images/seiscloud_logo.svg) -->
 <p><img src="/images/seis_logos.gif" alt="SeisCloud Logo"></p>
 <hr>
-<p>Enhancing the accuracy and efficiency of routine seismic monitoring networks at local, regional, and global scales by integrating 3D background models and a 3D Greens function database.</p>
-<h2 id="Family-of-SEIS-packages"><a href="#Family-of-SEIS-packages" class="headerlink" title="Family of SEIS packages"></a>Family of <em>SEIS</em> packages</h2><img src="/images/seis_Proj.png" title="Workflow" height="400px">
+<p>Enhancing the accuracy and efficiency of routine seismic monitoring networks at local, regional, and global scales by integrating 3D background models and 3D Greens function database</p>
+<h2 id="Family-of-SEIS-packages"><a href="#Family-of-SEIS-packages" class="headerlink" title="Family of SEIS packages"></a>Family of <em>SEIS</em> packages</h2><!-- <img src="/images/seis_Proj.png" title="Workflow" height="400px"> -->
+<img src="/images/seis_Proj.png" title="Workflow">
 
 <ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisdb/"><strong>SeisDB</strong></a> is a python package designed to create and compress the receiver-side 3D Greens’ function database. </li>
-<li><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisgen"><strong>SeisGen</strong></a> is a python package that retrieves Greens’ functions and theoretical seismograms from the receiver-side 3D Greens’ function (SGT, displacement) database.</li>
-<li><a href="https://seis.cloud/"><strong>SeisCloud</strong></a> is a data server that hosts a pre-computed receiver-side 3D Greens’ function database. </li>
-<li><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisclient"><strong>SeisClient</strong></a> is a python package used to request precise 3D Greens’ functions and theoretical seismograms from SeisCloud.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisdb/"><strong>SeisDB</strong></a> is a python package developed to create the receiver-side 3D Greens’ function database. </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisgen"><strong>SeisGen</strong></a> is a python package that can request precise 3D Greens’ functions and theoretical seismograms from the local receiver-side 3D Greens’ function (SGT, displacement) database.</li>
+<li><a href="https://seis.cloud/"><strong>SeisCloud</strong></a> provides the remote data server that hosts the 3D SGT database. </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisclient"><strong>SeisClient</strong></a> can request precise 3D Greens’ functions and theoretical seismograms from SeisCloud.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seishmc"><strong>SeisHMC</strong></a> is a python package for full moment tensor inversion using Hamiltonian Monte Carlo (HMC) sampling.</li>
 </ul>
 <!-- <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="/images/seisdb_logo.svg" title="SeisDB" height="100px"></div><div class="group-picture-column" style="width: 50%;"><img src="/images/seisgen_logo.svg" title="SeisGen" height="100px"></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="/images/seiscloud_logo.svg" title="SeisCloud" height="100px"></div><div class="group-picture-column" style="width: 50%;"><img src="/images/seisclient_logo.svg" title="SeisClient" height="100px"></div></div></div></div> -->
 
@@ -214,17 +217,17 @@
 <hr>
 <h2 id="SeisCloud-and-database"><a href="#SeisCloud-and-database" class="headerlink" title="SeisCloud and database"></a>SeisCloud and database</h2><p><a href="https://seis.cloud/"><strong>SeisCloud</strong></a> can provides the pre-calculated 3D Greens’ function data for seismological research purposes.</p>
 <p>The server can supply precise 3D Greens’ functions for point sources and theoretical seismograms for point sources, multiple-point sources, and finite faults in <span style="color: red;"><strong>a negligible amount of time</strong></span>. This is useful for various applications, such as earthquake monitoring, earthquake hazard assessment, and Earthquake Early Warning (EEW), as the database is generated using 3D background models, source-receiver reciprocity, and the state-of-the-art waveform simulation software <a target="_blank" rel="noopener" href="https://specfem.org/"><strong>SPECFEM3D_Cartesian</strong></a>.</p>
-<p>Real-time requests for 3D Greens’ functions and theoretical seismograms can be made from <a href="https://seis.cloud/"><strong>SeisCloud</strong></a> using <a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisclient"><strong>SeisClient</strong></a> with <a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisgen"><strong>SeisGen</strong></a> installed. For guidance, refer to the available <a href="/tutorials/">tutorials</a>.</p>
+<p>Real-time requests for 3D Greens’ functions and theoretical seismograms can be made from <a href="https://seis.cloud/"><strong>SeisCloud</strong></a> using <a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisclient"><strong>SeisClient</strong></a> with <a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisgen"><strong>SeisGen</strong></a> installed. For guidance, refer to the available <a href="tutorials.html">tutorials</a>.</p>
 <hr>
 <h2 id="Models-hosted-on-SeisCloud"><a href="#Models-hosted-on-SeisCloud" class="headerlink" title="Models hosted on SeisCloud"></a>Models hosted on SeisCloud</h2><ul>
-<li><a href="/models/">Available Models and Stations in current database</a></li>
+<li><a href="models.html">Available Models and Stations in current database</a></li>
 <li><a href="/contact/">To use your 3D background models with SeisCloud</a></li>
 </ul>
 <hr>
 <h2 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h2><ul>
 <li>Waveform simulations are performed using <a target="_blank" rel="noopener" href="https://specfem.org/"><strong>SPECFEM3D_Cartesian</strong></a> on the Niagara Supercomputer at <a target="_blank" rel="noopener" href="https://www.scinethpc.ca/">SciNet</a>, the <a target="_blank" rel="noopener" href="https://www.utoronto.ca/"><strong>University of Toronto</strong></a>‘s supercomputing center.</li>
 <li>The server and database were developed by <a target="_blank" rel="noopener" href="https://github.com/Liang-Ding"><strong>Liang Ding</strong></a>, a postdoctoral member of the Computational Seismology Group, led by <a target="_blank" rel="noopener" href="https://www.physics.utoronto.ca/~liuqy/"><strong>Prof. Qinya Liu</strong></a> at the University of Toronto.</li>
-<li>For contributions regarding 3D models, please refer to the <a href="/models/"><strong>models</strong></a> section.</li>
+<li>For contributions regarding 3D models, please refer to the <a href="models.html"><strong>models</strong></a> section.</li>
 </ul>
 <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="/images/logo_utoronto.jpg" title="UofT" height="70px"></div><div class="group-picture-column" style="width: 50%;"><img src="/images/logo_scinet_320px.png" title="Scinet" height="70px"></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><img src="/images/specfem_logo.svg" title="SPECFEM" height="70px"></div></div></div></div>
 
