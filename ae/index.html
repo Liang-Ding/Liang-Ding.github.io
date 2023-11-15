@@ -20,17 +20,18 @@
     var CONFIG = {"hostname":"seis.cloud","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Sensor Array Optimization You are welcome to cite our paper if you utilize our code to determine the sensor locations on the samples:  123Ding, L., Yang, G., Kravchinsky, E., Popoola, A., Goodfellow,">
+  <meta name="description" content="Sensor Array OptimizationYou are welcome to cite our paper if you utilize SeisCloud (https:&#x2F;&#x2F;seis.cloud) and our code to obtain the sensor locations in the arrays :   Ding, L., Yang, G., Kravchinsky,">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Acoustic Emission">
 <meta property="og:url" content="https://seis.cloud/ae/index.html">
 <meta property="og:site_name" content="SeisCloud">
-<meta property="og:description" content="Sensor Array Optimization You are welcome to cite our paper if you utilize our code to determine the sensor locations on the samples:  123Ding, L., Yang, G., Kravchinsky, E., Popoola, A., Goodfellow,">
+<meta property="og:description" content="Sensor Array OptimizationYou are welcome to cite our paper if you utilize SeisCloud (https:&#x2F;&#x2F;seis.cloud) and our code to obtain the sensor locations in the arrays :   Ding, L., Yang, G., Kravchinsky,">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://seis.cloud/images/AE_sensor_ani.gif">
+<meta property="og:image" content="https://seis.cloud/images/ae_mti_uncertainty.png">
 <meta property="og:image" content="https://seis.cloud/images/ae_example.png">
 <meta property="article:published_time" content="2023-04-10T04:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-27T13:58:30.242Z">
+<meta property="article:modified_time" content="2023-11-15T19:39:32.519Z">
 <meta property="article:author" content="Liang Ding">
 <meta property="article:tag" content="Geophysics, Seismology, python package, database, Earthquake, hazard mitigation, Earth sciences, Interdisciplinary projects">
 <meta name="twitter:card" content="summary">
@@ -190,19 +191,25 @@
       
       <div class="post-body">
           <hr>
-<h2 id="Sensor-Array-Optimization"><a href="#Sensor-Array-Optimization" class="headerlink" title="Sensor Array Optimization"></a>Sensor Array Optimization</h2><p><a href="#"><img src="/images/AE_sensor_ani.gif" title="Sensor array optimization" height="300px"><a></p>
-<p>You are welcome to cite our paper if you utilize our code to determine the sensor locations on the samples: </p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ding, L., Yang, G., Kravchinsky, E., Popoola, A., Goodfellow, S., Liu, Q., &amp; Grasselli, G. (2023). </span><br><span class="line">Quantitative optimization for acoustic emission sensor arrangement in rock laboratory experiments., </span><br><span class="line">in preparation.</span><br></pre></td></tr></table></figure>
+<h1 id="Sensor-Array-Optimization"><a href="#Sensor-Array-Optimization" class="headerlink" title="Sensor Array Optimization"></a>Sensor Array Optimization</h1><p>You are welcome to cite our paper if you utilize SeisCloud <a href="https://seis.cloud/">(<strong>https://seis.cloud</strong>)</a> and our code to obtain the sensor locations in the arrays : </p>
+<blockquote>
+<p>Ding, L., Yang, G., Kravchinsky, E., Popoola, A., Goodfellow, S., Liu, Q., &amp; Grasselli, G. (2023). Quantitative Optimization of Sensor Positions in Laboratory Acoustic Emission Experiments., submitted to Rock Mechanics and Rock Engineering.</p>
+</blockquote>
+<div class="sketchfab-embed-wrapper"> <iframe title="Postions of 18 sensors" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/a3043e0df5254e5ea36cb6afe28a3b25/embed"> </iframe> </div>
 
-<p>The sensor positions on the surface of either a block or cylindrical sample can be requested from SeisCloud <a href="https://seis.cloud/">(<strong>https://seis.cloud</strong>)</a>. </p>
-<h3 id="Take-a-bite"><a href="#Take-a-bite" class="headerlink" title="Take a bite"></a>Take a bite</h3><ul>
+<p>(A standard array with 18 sensors is placed on a sample block. Smaller cubes mark the positions of sensors in the original array, while larger cubes indicate the positions in the optimized array.)</p>
+<!-- <a href="#"><img src="/images/AE_sensor_ani.gif" title="Sensor array optimization" height="300px"><a> -->
+
+<hr>
+<h2 id="Request-sensor-arrays-from-SeisCloud-through-URL"><a href="#Request-sensor-arrays-from-SeisCloud-through-URL" class="headerlink" title="Request sensor arrays from SeisCloud through URL"></a>Request sensor arrays from SeisCloud through URL</h2><p>Sensor positions on the surface of either a block or cylindrical sample can be requested from SeisCloud <a href="https://seis.cloud/">(<strong>https://seis.cloud</strong>)</a>. </p>
+<ul>
 <li><p>To download a CSV file containing 20 sensor locations on a cylindrical sample with a radius of 50 mm and a height of 100 mm, simply paste the following address into your web browser.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://db.seis.cloud/aecylinders?nsensor=20&amp;radius=50&amp;height=100</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>To download a CSV file containing 20 sensor locations on a block sample with one vertex at [-32.5, -32.5, -65] and another vertex at [32.5, 32.5, 65], simply paste the following address into your web browser.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://db.seis.cloud/aeblocks?nsensor=20&amp;p1x=-32.5&amp;p1y=-32.5&amp;p1z=-65&amp;p2x=32.5&amp;p2y=32.5&amp;p2z=65</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="Example-in-Python"><a href="#Example-in-Python" class="headerlink" title="Example in Python"></a>Example in Python</h3><p>See also <a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/DAE/blob/master/examples/get_sensor_locations.py">the example</a></p>
+<h2 id="Request-sensor-arrays-from-SeisCloud-through-Python-script"><a href="#Request-sensor-arrays-from-SeisCloud-through-Python-script" class="headerlink" title="Request sensor arrays from SeisCloud through Python script"></a>Request sensor arrays from SeisCloud through Python script</h2><p>See also <a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/DAE/blob/master/examples/get_sensor_locations.py">the example</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> DArrays.AEDesigner <span class="keyword">import</span> Designer</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Initialize an instance that can request sensor array from SeisCloud (https://seis.cloud). </span></span><br><span class="line">designer = Designer()</span><br></pre></td></tr></table></figure>
@@ -221,14 +228,26 @@
 <li>height: the height of the cylinder sample. </li>
 <li>[0, 0, 0]: the sample center</li>
 </ul>
-<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><ul>
-<li><p>At present, our website offers a sensor array that includes between <strong>8</strong> to <strong>40</strong> sensors. If you’re interested in optimizing a sensor array that exceeds 40 sensors, please don’t hesitate to let <a href="mailto:myliang.ding@mail.utoronto.ca"><strong>me</strong></a> know.</p>
+<hr>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ul>
+<li><p>SeisCloud <a href="https://seis.cloud/">(<strong>https://seis.cloud</strong>)</a> undergoes monthly updates. If you encounter any issues, please inform <a href="mailto:myliang.ding@mail.utoronto.ca"><strong>me</strong></a>.</p>
 </li>
-<li><p>If you reside in certain countries or regions and are experiencing difficulty accessing SeisCloud (<a href="https://seis.cloud/">https://seis.cloud</a>) due to connectivity problems, kindly reach out to me via email if you have an interest in utilizing our code.</p>
+<li><p>Our website offers a sensor array that includes between <strong>8</strong> to <strong>40</strong> sensors. If you’re interested in optimizing a sensor array that exceeds 40 sensors, please let <a href="mailto:myliang.ding@mail.utoronto.ca"><strong>me</strong></a> know.</p>
+</li>
+<li><p>If you are interested in using SeisCloud <a href="https://seis.cloud/">(<strong>https://seis.cloud</strong>)</a> but reside in certain countries or regions and are experiencing difficulty accessing SeisCloud <a href="https://seis.cloud/">(<strong>https://seis.cloud</strong>)</a> due to connectivity problems, please let <a href="mailto:myliang.ding@mail.utoronto.ca"><strong>me</strong></a> know.</p>
 </li>
 </ul>
 <hr>
-<h2 id="Data-Processing"><a href="#Data-Processing" class="headerlink" title="Data Processing"></a>Data Processing</h2><p>Investigating the failure process through laboratory rock testing and acoustic emission monitoring</p>
+<hr>
+<h1 id="Non-uniqueness-of-moment-tensor-inversion-in-AE-monitoring"><a href="#Non-uniqueness-of-moment-tensor-inversion-in-AE-monitoring" class="headerlink" title="Non-uniqueness of moment tensor inversion in AE monitoring"></a>Non-uniqueness of moment tensor inversion in AE monitoring</h1><p>We introduce a quantitative method to measure the inherent non-uniqueness of the first-polarity-based moment tensor inversion method for acoustic emission monitoring, a problem often exacerbated by the sparse coverage of sensor arrays in laboratory experiments.<br>The proposed method can be utilized to examine the reliability and robustness of different sensor arrays in MTI and source type classification. For example, in our study, we use synthetic examples to explore the non-uniqueness using typical sensor array designs. Our results suggest that a sensor array with at least 18 sensors could reduce the overall uncertainty by less than 5%.</p>
+<blockquote>
+<p>Ding, L., Yang, G., Kravchinsky, E., Popoola, A. K., Goodfellow, S., Liu, Q., &amp; Grasselli, G. (2023). Systematic Uncertainty Quantification of First-Polarity-Based Moment Tensor Inversion Due to Sparse Coverage of Sensor Arrays in Laboratory Acoustic Emission Monitoring. Pure and Applied Geophysics. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s00024-023-03366-z">https://doi.org/10.1007/s00024-023-03366-z</a></p>
+</blockquote>
+<p><a href="#"><img src="/images/ae_mti_uncertainty.png" title="non" height="300px"><a></p>
+<p>(<strong>Left</strong>: The source type of accepted solutions from moment tensor inversion of an array. <strong>Right</strong>: The uncertainty distribution for a set of sensor arrays.)</p>
+<hr>
+<hr>
+<h1 id="Data-Processing"><a href="#Data-Processing" class="headerlink" title="Data Processing"></a>Data Processing</h1><p>Investigating the failure process through laboratory rock testing and acoustic emission monitoring</p>
 <ul>
 <li>Event detection </li>
 <li>Source Localization</li>
@@ -236,7 +255,7 @@
 <li>Velocity Survey and Traveltime Tomography<img src="/images/ae_example.png" title="Workflow" height="400px"></li>
 </ul>
 <hr>
-<h2 id="Stay-tuned"><a href="#Stay-tuned" class="headerlink" title="Stay tuned!"></a>Stay tuned!</h2><p>Upcoming enhancements will introduce new features and functionalities in the near future. Stay tuned for these forthcoming updates!</p>
+<h1 id="Stay-tuned"><a href="#Stay-tuned" class="headerlink" title="Stay tuned!"></a>Stay tuned!</h1><p>Upcoming enhancements will introduce new features and functionalities in the near future. Stay tuned for these forthcoming updates!</p>
 <!-- ## 3D Waveform simulation
 
 ## Source localization
@@ -305,7 +324,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sensor-Array-Optimization"><span class="nav-number">1.</span> <span class="nav-text">Sensor Array Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Take-a-bite"><span class="nav-number">1.1.</span> <span class="nav-text">Take a bite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-in-Python"><span class="nav-number">1.2.</span> <span class="nav-text">Example in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-number">1.3.</span> <span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Processing"><span class="nav-number">2.</span> <span class="nav-text">Data Processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stay-tuned"><span class="nav-number">3.</span> <span class="nav-text">Stay tuned!</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sensor-Array-Optimization"><span class="nav-number">1.</span> <span class="nav-text">Sensor Array Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Request-sensor-arrays-from-SeisCloud-through-URL"><span class="nav-number">1.1.</span> <span class="nav-text">Request sensor arrays from SeisCloud through URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request-sensor-arrays-from-SeisCloud-through-Python-script"><span class="nav-number">1.2.</span> <span class="nav-text">Request sensor arrays from SeisCloud through Python script</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Note"><span class="nav-number">1.3.</span> <span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Non-uniqueness-of-moment-tensor-inversion-in-AE-monitoring"><span class="nav-number">2.</span> <span class="nav-text">Non-uniqueness of moment tensor inversion in AE monitoring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Processing"><span class="nav-number">3.</span> <span class="nav-text">Data Processing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stay-tuned"><span class="nav-number">4.</span> <span class="nav-text">Stay tuned!</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
