@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"seis.cloud","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="SeisClient Tutorial Request Greens function and the synthetic waveform from point sources, multiple-point sources, and finite faults for various applications such as earthquake source characterization">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Use SeisCloud with SeisClient">
+<meta property="og:url" content="https://seis.cloud/seismology/tutorials.html">
+<meta property="og:site_name">
+<meta property="og:description" content="SeisClient Tutorial Request Greens function and the synthetic waveform from point sources, multiple-point sources, and finite faults for various applications such as earthquake source characterization">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-12T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-14T14:32:34.000Z">
+<meta property="article:author" content="[object Object]">
+<meta property="article:tag" content="Computational Seismology">
+<meta property="article:tag" content="Deep Learning in Geophysics">
+<meta property="article:tag" content="Earthquake Engineering">
+<meta property="article:tag" content="Seismic Signal Processing">
+<meta property="article:tag" content="Geophysical Inverse Problems">
+<meta property="article:tag" content="Neural Networks in Earth Sciences">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://seis.cloud/seismology/tutorials">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"https://seis.cloud/seismology/tutorials.html","path":"seismology/tutorials.html","title":"Use SeisCloud with SeisClient"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Use SeisCloud with SeisClient | null
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title"></p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-ai+-geophysics"><a href="/ai/" rel="section"><i class="fa fa-hexagon-nodes fa-fw"></i>AI+ Geophysics</a></li><li class="menu-item menu-item-seismology"><a href="/seismology/" rel="section"><i class="fa fa-bullseye fa-fw"></i>Seismology</a></li><li class="menu-item menu-item-microseismic"><a href="/ms/" rel="section"><i class="fa fa-stroopwafel fa-fw"></i>Microseismic</a></li><li class="menu-item menu-item-acoustic-emission"><a href="/ae/" rel="section"><i class="fa fa-cube fa-fw"></i>Acoustic Emission</a></li><li class="menu-item menu-item-people"><a href="/people/" rel="section"><i class="fa fa-user fa-fw"></i>People</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SeisClient-Tutorial"><span class="nav-number">1.</span> <span class="nav-text">SeisClient Tutorial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check-models-and-stations-in-SeisCloud"><span class="nav-number">2.</span> <span class="nav-text">Check models and stations in SeisCloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request-synthetic-waveform-from-point-source"><span class="nav-number">3.</span> <span class="nav-text">Request synthetic waveform from point source</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request-3D-Greens-function"><span class="nav-number">4.</span> <span class="nav-text">Request 3D Greens function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request-synthetic-waveform-from-multiple-point-sources-and-finite-fault"><span class="nav-number">5.</span> <span class="nav-text">Request synthetic waveform from multiple point sources and finite fault</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">[object Object]</p>
+  <div class="site-description" itemprop="description">Dr. Liang Ding's personal academic platform showcasing research in seismology, machine learning applications in geophysics, and open-source scientific projects.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">Use SeisCloud with SeisClient
+</h1>
+
+<div class="post-meta-container">
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h2 id="SeisClient-Tutorial"><a href="#SeisClient-Tutorial" class="headerlink" title="SeisClient Tutorial"></a>SeisClient Tutorial</h2><hr>
+<p>Request Greens function and the synthetic waveform from point sources, multiple-point sources, and finite faults for various applications such as earthquake source characterization, induced seismicity monitoring, and Earthquake Early Warning (EEW).</p>
+<p><a href="https://seis.cloud/"><strong>SeisCloud</strong></a> provides the remote data server that hosts the 3D SGT database. </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisclient"><strong>SeisClient</strong></a> can request precise 3D Greens’ functions and theoretical seismograms from SeisCloud.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># load packages</span></span><br><span class="line"><span class="keyword">from</span> seisclient.seisclient <span class="keyword">import</span> SeisClient</span><br><span class="line"><span class="keyword">from</span> obspy.core.util.attribdict <span class="keyword">import</span> AttribDict</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Check-models-and-stations-in-SeisCloud"><a href="#Check-models-and-stations-in-SeisCloud" class="headerlink" title="Check models and stations in SeisCloud"></a>Check models and stations in SeisCloud</h2><hr>
+<ul>
+<li>Check models and stations available in remote database: <a href="https://seis.cloud/models/">https://seis.cloud/models/</a></li>
+<li>Use your own 3D background models with SeisCloud: <a href="https://seis.cloud/contact/">https://seis.cloud/contact/</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># request model parameters</span></span><br><span class="line">req = SeisClient()</span><br><span class="line"></span><br><span class="line"><span class="comment"># specify the model name</span></span><br><span class="line">model = <span class="string">&#x27;SOCAL3D&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># request the model parameters</span></span><br><span class="line">info_dict, _ = req.request_model_info(model)</span><br><span class="line"><span class="built_in">print</span>(info_dict)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Request-synthetic-waveform-from-point-source"><a href="#Request-synthetic-waveform-from-point-source" class="headerlink" title="Request synthetic waveform from point source"></a>Request synthetic waveform from point source</h2><hr>
+<ul>
+<li>Set station, source, saving_dir</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># station (eg: station SLA in Network CI)</span></span><br><span class="line">station = AttribDict(&#123;</span><br><span class="line">    <span class="string">&#x27;latitude&#x27;</span>: <span class="number">35.890</span>,</span><br><span class="line">    <span class="string">&#x27;longitude&#x27;</span>: -<span class="number">117.283</span>,</span><br><span class="line">    <span class="string">&#x27;network&#x27;</span>: <span class="string">&#x27;CI&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;station&#x27;</span>: <span class="string">&#x27;SLA&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;location&#x27;</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;id&#x27;</span>: <span class="string">&#x27;SLA&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># source</span></span><br><span class="line">origin = AttribDict(&#123;<span class="string">&#x27;latitude&#x27;</span>: <span class="number">35.601</span>,</span><br><span class="line">                     <span class="string">&#x27;longitude&#x27;</span>: -<span class="number">117.597</span>,</span><br><span class="line">                     <span class="string">&#x27;depth_in_m&#x27;</span>: <span class="number">2810.0</span>,</span><br><span class="line">                     <span class="string">&#x27;id&#x27;</span>: <span class="string">&#x27;evt1&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># the folder storing the request data. </span></span><br><span class="line">saving_dir = <span class="string">&#x27;./data/&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>Request synthetic waveform with CMTSOLUTION</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># CMTSOLUTION</span></span><br><span class="line"><span class="comment"># set moment tensor eg: CMT in dyn.cm -&gt; n.m</span></span><br><span class="line">mt_cmt = np.array([-<span class="number">2.900000e+25</span>, -<span class="number">4.120000e+26</span>, <span class="number">4.410000e+26</span>, <span class="number">8.580000e+25</span>, <span class="number">4.470000e+25</span>, <span class="number">1.010000e+26</span>])/<span class="number">1E7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># request synthetic waveform </span></span><br><span class="line">syn_cmt = req.get_synthetic_mtsolution(model=model, station=station, origin=origin, save_dir=saving_dir, mt_RTP=mt_cmt, b_RTZ=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(syn_cmt)</span><br><span class="line">syn_cmt.plot(outfile=<span class="string">&quot;syn_cmt.png&quot;</span>, show=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>Request synthetic waveform with FORCESOLUTION</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># FORCESOLUTION</span></span><br><span class="line"><span class="comment"># set force solution in ENZ.</span></span><br><span class="line">force_enz = [<span class="number">1e15</span>, <span class="number">2e15</span>, <span class="number">3e15</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># request synthetic waveform</span></span><br><span class="line">syn_f = req.get_synthetic_forcesolution(model=model, station=station, origin=origin, save_dir=saving_dir, force_enz=force_enz, b_RTZ=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(syn_f)</span><br><span class="line">syn_f.plot(outfile=<span class="string">&quot;syn_f.png&quot;</span>, show=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Request-3D-Greens-function"><a href="#Request-3D-Greens-function" class="headerlink" title="Request 3D Greens function"></a>Request 3D Greens function</h2><hr>
+<ul>
+<li>3D Greens function</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3D Greens function</span></span><br><span class="line">greens_3d = req.get_greens_3DMT(model=model, station=station, origin=origin, save_dir=saving_dir)</span><br><span class="line"><span class="built_in">print</span>(greens_3d)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Request-synthetic-waveform-from-multiple-point-sources-and-finite-fault"><a href="#Request-synthetic-waveform-from-multiple-point-sources-and-finite-fault" class="headerlink" title="Request synthetic waveform from multiple point sources and finite fault"></a>Request synthetic waveform from multiple point sources and finite fault</h2><hr>
+<p><a target="_blank" rel="noopener" href="https://github.com/Liang-Ding/seisclient/blob/main/examples/request_syn_finite_fault.py">Examples</a></p>
+<!-- More info: [Writing](https://hexo.io/docs/writing.html) -->
+
+
+      </div>
+      
+      
+      
+    </div>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Liang Ding</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
