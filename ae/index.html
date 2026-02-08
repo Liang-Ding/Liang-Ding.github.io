@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://seis.cloud/images/ae_mti_uncertainty.png">
 <meta property="og:image" content="https://seis.cloud/images/ae_example.png">
 <meta property="article:published_time" content="2023-04-10T00:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-14T00:04:40.565Z">
+<meta property="article:modified_time" content="2026-02-08T16:42:17.131Z">
 <meta property="article:author" content="[object Object]">
 <meta property="article:tag" content="Computational Seismology">
 <meta property="article:tag" content="Deep Learning in Geophysics">
@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Acoustic-Emission-and-Sensor-Array-Optimization"><span class="nav-number">1.</span> <span class="nav-text">Acoustic Emission and Sensor Array Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualizing-Sensor-Arrays"><span class="nav-number">1.2.</span> <span class="nav-text">Visualizing Sensor Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requesting-Sensor-Arrays-from-SeisCloud"><span class="nav-number">1.3.</span> <span class="nav-text">Requesting Sensor Arrays from SeisCloud</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Through-URL-Requests"><span class="nav-number">1.3.1.</span> <span class="nav-text">Through URL Requests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-Python-Script"><span class="nav-number">1.3.2.</span> <span class="nav-text">Using Python Script</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Request-Sensor-Locations-for-a-Block-Sample"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Request Sensor Locations for a Block Sample</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Request-Sensor-Locations-for-a-Cylindrical-Sample"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Request Sensor Locations for a Cylindrical Sample</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-Uniqueness-in-Moment-Tensor-Inversion-for-AE-Monitoring"><span class="nav-number">1.4.</span> <span class="nav-text">Non-Uniqueness in Moment Tensor Inversion for AE Monitoring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Processing-in-Acoustic-Emission-Monitoring"><span class="nav-number">1.5.</span> <span class="nav-text">Data Processing in Acoustic Emission Monitoring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Enhancements"><span class="nav-number">1.6.</span> <span class="nav-text">Future Enhancements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notes"><span class="nav-number">1.7.</span> <span class="nav-text">Notes</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Acoustic-Emission-and-Sensor-Array-Optimization"><span class="nav-number">1.</span> <span class="nav-text">Acoustic Emission and Sensor Array Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualizing-Sensor-Arrays"><span class="nav-number">1.2.</span> <span class="nav-text">Visualizing Sensor Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generating-Sensor-Arrays"><span class="nav-number">1.3.</span> <span class="nav-text">Generating Sensor Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Current-Recommended-Method"><span class="nav-number">1.3.1.</span> <span class="nav-text">Current Recommended Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-Uniqueness-in-Moment-Tensor-Inversion-for-AE-Monitoring"><span class="nav-number">1.4.</span> <span class="nav-text">Non-Uniqueness in Moment Tensor Inversion for AE Monitoring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Processing-in-Acoustic-Emission-Monitoring"><span class="nav-number">1.5.</span> <span class="nav-text">Data Processing in Acoustic Emission Monitoring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Enhancements"><span class="nav-number">1.6.</span> <span class="nav-text">Future Enhancements</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -138,7 +138,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -182,26 +182,30 @@
 <div class="sketchfab-embed-wrapper"> <iframe title="Positions of 18 sensors" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/a3043e0df5254e5ea36cb6afe28a3b25/embed"> </iframe> </div>
 
 <hr>
-<h2 id="Requesting-Sensor-Arrays-from-SeisCloud"><a href="#Requesting-Sensor-Arrays-from-SeisCloud" class="headerlink" title="Requesting Sensor Arrays from SeisCloud"></a>Requesting Sensor Arrays from SeisCloud</h2><h3 id="Through-URL-Requests"><a href="#Through-URL-Requests" class="headerlink" title="Through URL Requests"></a>Through URL Requests</h3><p>SeisCloud provides sensor positions for both <strong>block</strong> and <strong>cylindrical</strong> samples. Use the following URLs to download CSV files:</p>
+<h2 id="Generating-Sensor-Arrays"><a href="#Generating-Sensor-Arrays" class="headerlink" title="Generating Sensor Arrays"></a>Generating Sensor Arrays</h2><blockquote>
+<p>⚠️ <span style="color: red; font-weight: bold;"><strong>Notice (Deprecation)</strong></span><br>As of 1st March 2026, the previous method for requesting sensor arrays directly from the SeisCloud server has been <strong>deprecated</strong> and is no longer maintained.  </p>
+<p><strong>All new requests for sensor arrays should be sent via email:</strong><br>📧 <strong><a href="mailto:&#x6c;&#x69;&#97;&#110;&#x67;&#x64;&#105;&#110;&#x67;&#x38;&#54;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">liangding86@gmail.com</a></strong></p>
+</blockquote>
+<hr>
+<p><del>## Requesting Sensor Arrays from SeisCloud</del></p>
+<p><del>### Through URL Requests</del><br><del>SeisCloud provides sensor positions for both <strong>block</strong> and <strong>cylindrical</strong> samples. Use the following URLs to download CSV files:</del></p>
+<p><del>- <strong>Cylindrical Sample</strong> (20 sensors, radius &#x3D; 50 mm, height &#x3D; 100 mm)</del><br><del><a target="_blank" rel="noopener" href="https://db.seis.cloud/aecylinders?nsensor=20&radius=50&height=100">https://db.seis.cloud/aecylinders?nsensor=20&amp;radius=50&amp;height=100</a></del></p>
+<p><del>- <strong>Block Sample</strong> (20 sensors, two vertices at [-32.5, -32.5, -65] and [32.5, 32.5, 65])</del><br><del><a target="_blank" rel="noopener" href="https://db.seis.cloud/aeblocks?nsensor=20&p1x=-32.5&p1y=-32.5&p1z=-65&p2x=32.5&p2y=32.5&p2z=65">https://db.seis.cloud/aeblocks?nsensor=20&amp;p1x=-32.5&amp;p1y=-32.5&amp;p1z=-65&amp;p2x=32.5&amp;p2y=32.5&amp;p2z=65</a></del></p>
+<p><del>### Using Python Script</del><br><del>For programmatic access, use our Python library:</del></p>
+<p><del>from DArrays.AEDesigner import Designer</del></p>
+<p><del># Initialize an instance to request sensor arrays from SeisCloud</del><br><del>designer &#x3D; Designer()</del></p>
+<p><del>#### Request Sensor Locations for a Block Sample</del><br><del>saving_filepath &#x3D; “sensor_block_n20.csv”<br>designer.get_sensors_on_blocks(nsensor&#x3D;20, p1x&#x3D;-32.5, p1y&#x3D;-32.5, p1z&#x3D;-65,<br>                               p2x&#x3D;32.5, p2y&#x3D;32.5, p2z&#x3D;65, saving_filepath&#x3D;saving_filepath)</del></p>
+<p><del>#### Request Sensor Locations for a Cylindrical Sample</del><br><del>saving_filepath &#x3D; “sensor_cylinder_n20.csv”<br>designer.get_sensors_on_cylinders(nsensor&#x3D;20, radius&#x3D;50, height&#x3D;100,<br>                                  saving_filepath&#x3D;saving_filepath)</del></p>
+<hr>
+<h3 id="Current-Recommended-Method"><a href="#Current-Recommended-Method" class="headerlink" title="Current Recommended Method"></a>Current Recommended Method</h3><p>Please contact us directly by email with the following information:</p>
 <ul>
-<li><strong>Cylindrical Sample</strong> (20 sensors, radius &#x3D; 50 mm, height &#x3D; 100 mm)</li>
+<li>Sample type (block or cylindrical)</li>
+<li>Number of sensors</li>
+<li>Geometric parameters (dimensions, vertices, radius, height, etc.)</li>
+<li>Desired output format (e.g., CSV)</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://db.seis.cloud/aecylinders?nsensor=20&amp;radius=50&amp;height=100</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>Block Sample</strong> (20 sensors, two vertices at [-32.5, -32.5, -65] and [32.5, 32.5, 65])</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://db.seis.cloud/aeblocks?nsensor=20&amp;p1x=-32.5&amp;p1y=-32.5&amp;p1z=-65&amp;p2x=32.5&amp;p2y=32.5&amp;p2z=65</span><br></pre></td></tr></table></figure>
-
-<h3 id="Using-Python-Script"><a href="#Using-Python-Script" class="headerlink" title="Using Python Script"></a>Using Python Script</h3><p>For programmatic access, use our Python library:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> DArrays.AEDesigner <span class="keyword">import</span> Designer</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Initialize an instance to request sensor arrays from SeisCloud</span></span><br><span class="line">designer = Designer()</span><br></pre></td></tr></table></figure>
-
-<h4 id="Request-Sensor-Locations-for-a-Block-Sample"><a href="#Request-Sensor-Locations-for-a-Block-Sample" class="headerlink" title="Request Sensor Locations for a Block Sample"></a>Request Sensor Locations for a Block Sample</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">saving_filepath = <span class="string">&quot;sensor_block_n20.csv&quot;</span></span><br><span class="line">designer.get_sensors_on_blocks(nsensor=<span class="number">20</span>, p1x=-<span class="number">32.5</span>, p1y=-<span class="number">32.5</span>, p1z=-<span class="number">65</span>,</span><br><span class="line">                               p2x=<span class="number">32.5</span>, p2y=<span class="number">32.5</span>, p2z=<span class="number">65</span>, saving_filepath=saving_filepath)</span><br></pre></td></tr></table></figure>
-
-<h4 id="Request-Sensor-Locations-for-a-Cylindrical-Sample"><a href="#Request-Sensor-Locations-for-a-Cylindrical-Sample" class="headerlink" title="Request Sensor Locations for a Cylindrical Sample"></a>Request Sensor Locations for a Cylindrical Sample</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">saving_filepath = <span class="string">&quot;sensor_cylinder_n20.csv&quot;</span></span><br><span class="line">designer.get_sensors_on_cylinders(nsensor=<span class="number">20</span>, radius=<span class="number">50</span>, height=<span class="number">100</span>,</span><br><span class="line">                                  saving_filepath=saving_filepath)</span><br></pre></td></tr></table></figure>
-
+<p>📧 <strong><a href="mailto:&#108;&#x69;&#97;&#110;&#103;&#100;&#105;&#110;&#x67;&#56;&#x36;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">liangding86@gmail.com</a></strong></p>
+<p>We will process the request and provide the sensor array configuration accordingly.</p>
 <hr>
 <h2 id="Non-Uniqueness-in-Moment-Tensor-Inversion-for-AE-Monitoring"><a href="#Non-Uniqueness-in-Moment-Tensor-Inversion-for-AE-Monitoring" class="headerlink" title="Non-Uniqueness in Moment Tensor Inversion for AE Monitoring"></a>Non-Uniqueness in Moment Tensor Inversion for AE Monitoring</h2><p>The moment tensor inversion (MTI) method, based on first polarity, suffers from inherent non-uniqueness due to sparse sensor arrays. Our research quantifies this uncertainty and evaluates sensor array reliability.</p>
 <blockquote>
@@ -231,12 +235,6 @@
 </ul>
 <p>Stay tuned for upcoming developments!</p>
 <hr>
-<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><ul>
-<li>SeisCloud <a href="https://seis.cloud/">(https://seis.cloud)</a> is updated monthly. Report any issues via <a href="mailto:&#x6d;&#121;&#x6c;&#x69;&#x61;&#x6e;&#x67;&#x2e;&#x64;&#105;&#110;&#103;&#64;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x75;&#x74;&#111;&#x72;&#111;&#110;&#x74;&#111;&#x2e;&#x63;&#97;">email</a>.</li>
-<li>Sensor arrays available for <strong>8 to 40 sensors</strong>. Need more? Contact us!</li>
-<li>Having trouble accessing SeisCloud? Reach out, and we’ll assist you.</li>
-</ul>
-<hr>
 <p>Thank you for your interest in <strong>SeisCloud</strong> and acoustic emission research!</p>
 
       </div>
@@ -257,7 +255,7 @@
 
   <div class="copyright">
     &copy; 2021 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
